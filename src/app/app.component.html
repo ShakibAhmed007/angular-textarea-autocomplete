@@ -1,4 +1,18 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h3>
+  Textarea Autocomplete Example :)
+</h3>
+
+<mwl-text-input-autocomplete-container>
+  <textarea
+    placeholder="Type @ to search..."
+    class="form-control"
+    rows="5"
+    cols="40"
+    [(ngModel)]="formControlValue"
+    mwlTextInputAutocomplete
+    [findChoices]="findChoices"
+    [getChoiceLabel]="getChoiceLabel"
+    [menuComponent]="menuComponent"
+  >
+  </textarea>
+</mwl-text-input-autocomplete-container>

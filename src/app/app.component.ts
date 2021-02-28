@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { CustomMenuComponent } from './custom-menu.component';
 
 @Component({
   selector: 'my-app',
@@ -6,5 +7,17 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+
+  formControlValue = '';
+  menuComponent = CustomMenuComponent;
+
+  findChoices(searchText: string) {
+    return ['Cricket', 'Football', 'Tenis'].filter(item =>
+      item.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
+
+  getChoiceLabel(choice: string) {
+    return `@${choice} `;
+  }
 }
